@@ -1,6 +1,5 @@
 package onoue.yoshihisa.spring_mvc_unit_test.controller;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +13,12 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//ApplicationContext will be loaded from "classpath:/app-config.xml"
+//ApplicationContext will be loaded from "classpath:/test-application-config.xml
 @ContextConfiguration(locations="/test-application-config.xml")
 public class RegisterUserControllerTest {
 	// Never use "new" to instantiate. Otherwise Autowire in the following class will not work.
 	@Autowired
 	RegisterUserController controller;
-	
-	@Before
-	public void setup() {
-	}
 
 	@Test
 	public void register_user_success() {
